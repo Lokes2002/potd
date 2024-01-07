@@ -1,0 +1,29 @@
+*/ There are three cards with letters a,bc  placed in a row in some order. You can do the following operation at most once:
+Pick two cards, and swap them.
+Is it possible that the row becomes abc
+ after the operation? Output "YES" if it is possible, and "NO" otherwise.
+Pick two cards, and swap them.  */
+
+
+import java.util.*;
+
+public class five {
+   
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String b;
+        b = sc.nextLine();
+    String a ="abc";
+        boolean ans = false;
+        int count =0;
+        for(int i=0; i<3; i++) {
+            if(b.charAt(i)!=a.charAt(i)) {
+                count++;
+            }
+        }
+        if(count<=2) {
+            ans = true;
+        }
+        System.out.println(ans);
+        }   
+    }
