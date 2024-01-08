@@ -1,0 +1,21 @@
+
+    public long minMoves(long a[], long n, long k) {
+      int count=0;
+      for(int i=1; i<n; i++) {
+          if(a[i]==a[i-1] || a[i]>a[i+1]) {
+              continue;
+              
+          }
+          else{
+          while(a[i]>a[i-1]) {
+              a[i]-=k;
+              count++;
+          }
+          }
+          
+      }
+          
+      return count;
+      
+}
+}
