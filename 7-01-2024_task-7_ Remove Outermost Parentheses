@@ -1,0 +1,27 @@
+//2. Remove Outermost Parentheses using the stack
+class Solution {
+    public String removeOuterParentheses(String s) {
+        Stack<Character> b = new Stack<>() ;
+        StringBuilder sb = new StringBuilder();
+        int n =s.length();
+        for(int i=0; i<n; i++) {
+            char ch = s.charAt(i);
+            if(ch=='(') {
+                if(b.size()>0) {
+                    sb.append(ch);
+                }
+                b.push(ch);
+            }
+            else {
+                b.pop();
+                if(b.size()>0) {
+                    sb.append(ch);
+
+                }
+            }
+            
+                    
+                }
+                return sb.toString();
+    }
+}
