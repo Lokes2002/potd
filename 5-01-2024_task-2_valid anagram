@@ -1,0 +1,34 @@
+// brute force
+class Solution {
+    public boolean isAnagram(String s, String t) {
+        boolean flag =false;
+        char [] sChars = s.toCharArray();
+        char [] tChars = t.toCharArray();
+        Arrays.sort(sChars);
+        Arrays.sort(tChars);
+        
+    return Arrays.equals(sChars, tChars);   
+    }
+}
+
+// using array
+// brute force
+class Solution {
+    public boolean isAnagram(String s, String t) {
+        int n = s.length();
+        int m = t.length();
+        if(n!=m)return false;
+        int count[] = new int[26];
+        for(char ch: s.toCharArray())
+        count[ch-'a']++;
+        for(char ch: t.toCharArray())
+        count[ch-'a']--;
+
+        for(int var : count)
+            if (var!=0)return false;
+
+            return true;
+        
+            
+        }
+    }
