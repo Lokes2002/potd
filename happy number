@@ -1,0 +1,29 @@
+class Solution {
+    public static int add(int n){
+        int rem;
+        int sum=0;
+          while(n>0){
+            rem=n%10;
+            sum += rem*rem;
+            n=n/10;
+        }
+        return sum;
+    }
+    public boolean isHappy(int n) {
+        HashSet<Integer> map = new HashSet<>();
+      
+      while(n!=1) {
+          n=add(n);
+          if(map.contains(n)){
+              break;
+          }
+          map.add(n);   
+      }
+        
+        if(n==1){
+            return true;
+        }
+        
+        return false;
+    }
+}
